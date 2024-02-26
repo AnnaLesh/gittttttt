@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Журнал работ</h1>
+{% for item in news%}
+    <h2>Работа {{loop.index}}</h2>
+    <table>
+        <tr>
+            <th style="background: #FFC618">Имя работы</th>
+            <th style="background: #42FF18">Тимлиадер</th>
+            <th style="background: #4018FF">Имени коллабораторов</th>
+            <th style="background: #FF18D5">Закончена/нет</th>
+        </tr>
+        <tr>
+            <td style="background: #42FF18">{{item.job}}</td>
+            <td style="background: #FF18D5">{{item.team_leader}}</td>
+            <td style="background: #4018FF">{{item.collaborators}}</td>
+            <td style="background: #FFC618">{{item.is_finished}}</td>
+        </tr>
+    </table>
+{% endfor %}
+{% endblock %}
